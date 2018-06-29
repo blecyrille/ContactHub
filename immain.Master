@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <%--<!-- Global site tag (gtag.js) - Google Analytics --> Add your own Google Tarck Javascript--%>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117201081-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'use your own Google Track Code'); 
+    </script>
+
     <meta charset="utf-8" />
     <asp:ContentPlaceHolder ID="PageHeadPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>

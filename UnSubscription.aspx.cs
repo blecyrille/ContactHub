@@ -194,8 +194,6 @@ public partial class Unsubscription : System.Web.UI.Page
                 if (this.global_success.Visible) this.global_success.Visible = false;
                 this.global_error.Visible = true;
                 this.global_error_msg.Text = Mains.Constant.FAIL_CRUD;
-                //UpdAdd.Update();
-                //upCrudGrid.Update();
                 upDel.Update();
                 bindgrid(Session[RunningCache.InterestID].ToString());
                 sb.Append(@"<script type='text/javascript'>");
@@ -210,7 +208,6 @@ public partial class Unsubscription : System.Web.UI.Page
                 if (this.global_error.Visible) this.global_error.Visible = false;
                 this.global_success.Visible = true;
                 this.global_success_msg.Text = Mains.Constant.SUCCESS_DELETE;
-                //UpdAdd.Update();
                 upDel.Update();
                 bindgrid(Session[RunningCache.InterestID].ToString());
 

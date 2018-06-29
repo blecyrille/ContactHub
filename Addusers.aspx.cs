@@ -188,14 +188,8 @@ public partial class Addusers : System.Web.UI.Page
             {
                 try
                 {
-                    //txtUserFullName.ReadOnly = true;
-                    //txtUserOrganization.ReadOnly = true;
-                    //txtUserTitle.ReadOnly = true;
                     txtUsername.ReadOnly = true;
                     txtUserMail.ReadOnly = true;
-                    //txtUserPhone.ReadOnly = true;
-                    //txtUserAddress.ReadOnly = true;
-                    //txtUserNote.ReadOnly = true;
 
                     txtUserFullName.Text = UserFullName;
                     txtUserOrganization.Text = UserOrganization;
@@ -470,7 +464,6 @@ public partial class Addusers : System.Web.UI.Page
     public static string GetUniqueKey(int maxSize)
     {
         char[] chars = new char[62];
-        // chars ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToCharArray();
         chars = "abcdefghijklmnopqrstuvwxyz1234567890".ToCharArray();
         byte[] data = new byte[1];
         RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider();

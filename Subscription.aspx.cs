@@ -339,9 +339,8 @@ public partial class Subscription : System.Web.UI.Page
                         else
                             Session[RunningCache.SubscriberID] = objSubscriber.SaveSubscriber(objSubscriber, out strmsg);
 
-                        string strURL = "http://contacthub.azurewebsites.net/subscription.aspx?from=fu&vid=" + txtSubEmail.Text.Trim() + "&strflags=" + objSubscriber.SubscriberCode;
+                        string strURL = "use your hosting web folder/subscription.aspx?from=fu&vid=" + txtSubEmail.Text.Trim() + "&strflags=" + objSubscriber.SubscriberCode;
                         SendEmail(txtSubEmail.Text.Trim(), "ContactHub Subscription", txtSubFullName.Text.Trim(), strURL);
-                        //SendEmail("ble@unhcr.org", "ContactHub Subscription", txtSubFullName.Text.Trim(), strURL);
 
                         if (this.subscription_error.Visible) this.subscription_error.Visible = false;
                         this.subcription_success.Visible = true;
@@ -387,7 +386,7 @@ public partial class Subscription : System.Web.UI.Page
                                             subscriber = txtSubEmail.Text.Trim();
                                         else subscriber = txtSubEmail.Text.Trim() + " (" + txtSubFullName.Text.Trim() + ")";
 
-                                        string strURL = "http://contacthub.azurewebsites.net/unsubscription.aspx?from=fu&vid=" + InterestCode;
+                                        string strURL = "use your hosting web folder/unsubscription.aspx?from=fu&vid=" + InterestCode;
                                         SendNotification(dtUser.Rows[0]["UserMail"].ToString().Trim(), "ContactHub Notification Email", dtFocalPoint.Rows[i]["UserFullName"].ToString(), subscriber, strURL, dtFocalPoint.Rows[i]["SectorInterestName"].ToString(), dtFocalPoint.Rows[i]["AreaInterestName"].ToString());
                                     }
 
@@ -431,7 +430,6 @@ public partial class Subscription : System.Web.UI.Page
 
     protected void bindSectorInterest()
     {
-        //DataTable dt = objSectorInterest.GetSectorInterest("  where SectorInterestID in (1,2,3,4,5,6,7,8,9,10,11,12,13) order by SectorInterestName ");
         DataTable dt = objSectorInterest.GetSectorInterest("  order by SectorInterestName ");
         DataRow dr = dt.NewRow();
         dr[1] = "Choose a Sector";
@@ -646,7 +644,7 @@ public partial class Subscription : System.Web.UI.Page
 
         System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-        msg.From = new MailAddress("lebbeia@unhcr.org", "Inter-Agency Coordination Lebanon");
+        msg.From = new MailAddress("your email address", "your email address name");
 
         msg.To.Add(emailAddress);
         msg.Subject = Title;
@@ -681,12 +679,12 @@ public partial class Subscription : System.Web.UI.Page
 
         System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-        msg.From = new MailAddress("lebbeia@unhcr.org", "Inter-Agency Coordination Lebanon");
+        msg.From = new MailAddress("your email address", "your email address name");
 
         msg.To.Add(emailAddress);
         msg.Subject = Title;
 
-        String logo = Server.MapPath("~/EmailTemplates/images/interagency.jpg");
+        String logo = Server.MapPath("~/EmailTemplates/images/interagency.jpg");//you can change with your logo
         System.Net.Mail.AlternateView htmlView = AlternateView.CreateAlternateViewFromString(template, null, "text/html");
         LinkedResource pic1 = new LinkedResource(logo, MediaTypeNames.Image.Jpeg);
         pic1.ContentId = "logo";

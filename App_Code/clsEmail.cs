@@ -26,47 +26,21 @@ public class clsEmail
 		// TODO: Add constructor logic here
 		//
 	}
-
-
-    //public Boolean EmailConfig(string template, MailMessage oMail, string strEmailFrom)
-    //{
-    //    oMail.IsBodyHtml = true;
-    //    //    msg.Body = template;
-
-    //    oMail.Priority = MailPriority.High;	// enumeration
-    //    oMail.Body = template;
-
-    //    oMail.From = new MailAddress(strEmailFrom, "");
-    //    SmtpClient ss = new SmtpClient();
-
-    //    ss.Host = "smtp.sendgrid.net";
-    //    ss.EnableSsl = true;
-    //    ss.Port = 465;
-    //    ss.Timeout = 50000;
-    //    ss.DeliveryMethod = SmtpDeliveryMethod.Network;
-    //    ss.UseDefaultCredentials = false;
-    //    ss.Credentials = new NetworkCredential(strEmailFrom, "");
-
-    //    oMail.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-    //    ss.Send(oMail);
-
-    //    return true;
-
-    //}
-
+   
     public Boolean EmailConfig(string template, MailMessage msg)
     {
         msg.IsBodyHtml = true;
         msg.Priority = MailPriority.High;
         msg.Body = template;
 
-        msg.From = new MailAddress("lebbeia@unhcr.org", "Inter-Agency Coordination Lebanon");
+        msg.From = new MailAddress("your email address", "Title of the email");//add your email address and Title of the email 
         SmtpClient smtpClient = new SmtpClient("smtp.sendgrid.net", Convert.ToInt32(587));
         smtpClient.EnableSsl = true;
         smtpClient.UseDefaultCredentials = false;
         smtpClient.Timeout = 10000;
         smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-        System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("apikey", "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");
+
+        System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("Network username", "Network password");//add your network username and password. In this application, I am using SendGrid
         smtpClient.Credentials = credentials;
 
         smtpClient.Send(msg);

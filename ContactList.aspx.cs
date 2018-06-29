@@ -469,8 +469,6 @@ public partial class ContactList : System.Web.UI.Page
                         objInterest.SaveInterest(objInterest, out strmsg);
 
                         // This part is for email saving once I get the email server IP address :)
-                        //SendEmail(row["Email"].ToString().Trim(), "IM Tools Login Details", row["FullName"].ToString().Trim(), Newpwd);
-                        //SendEmail("ble@unhcr.org", "DM Tools Login Details", row["FullName"].ToString().Trim(), Newpwd);
                         if (this.global_error.Visible) this.global_error.Visible = false;
                         this.global_success.Visible = true;
                         this.global_success_msg.Text = txtSubscriberEmail.Text.Trim() + " is successfully saved into the system.";
@@ -489,9 +487,6 @@ public partial class ContactList : System.Web.UI.Page
                             objInterest.LastModifiedDate = DateTime.Now;
                             objInterest.SaveInterest(objInterest, out strmsg);
 
-                            // This part is for email saving once I get the email server IP address :)
-                            //SendEmail(row["Email"].ToString().Trim(), "IM Tools Login Details", row["FullName"].ToString().Trim(), Newpwd);
-                            //SendEmail("ble@unhcr.org", "DM Tools Login Details", row["FullName"].ToString().Trim(), Newpwd);
                             if (this.global_error.Visible) this.global_error.Visible = false;
                             this.global_success.Visible = true;
                             this.global_success_msg.Text = "The selected Sector and Area have been added to " + txtSubscriberEmail.Text.Trim() + " information in the system.";
@@ -784,9 +779,6 @@ public partial class ContactList : System.Web.UI.Page
                                 objInterest.InterestCode = GetUniqueKey(6);
                                 objInterest.SaveInterest(objInterest, out strmsg);
 
-                                //string strURL = "http://contacthub.azurewebsites.net/subscription.aspx?from=fu&vid=" + objSubscriber.SubscriberEmail + "&strflags=" + objSubscriber.SubscriberCode;
-                                //SendEmail(objSubscriber.SubscriberEmail, "ContactHub Subscription", objSubscriber.SubscriberFullName, strURL);
-                                //SendEmail("ble@unhcr.org", "ContactHub Subscription", objSubscriber.SubscriberFullName, strURL);
                                 this.global_success.Visible = true;
                                 this.global_success_msg.Text = "Contacts successfully imported in your list";
                             }
@@ -807,11 +799,6 @@ public partial class ContactList : System.Web.UI.Page
                                     objInterest.InterestCode = GetUniqueKey(6);
                                     objInterest.SaveInterest(objInterest, out strmsg);
 
-                                    //objSubscriber.CustomUpdateSubscriber(" SubscriberCode='" + objSubscriber.SubscriberCode + "' WHERE SubscriberEmail='" + objSubscriber.SubscriberEmail + "'");
-
-                                    //string strURL = "http://contacthub.azurewebsites.net/subscription.aspx?from=fu&vid=" + objSubscriber.SubscriberEmail + "&strflags=" + objSubscriber.SubscriberCode;
-                                    //SendEmail(objSubscriber.SubscriberEmail, "ContactHub Subscription", objSubscriber.SubscriberFullName, strURL);
-                                    //SendEmail("ble@unhcr.org", "ContactHub Subscription", objSubscriber.SubscriberFullName, strURL);
                                     this.global_success.Visible = true;
                                     this.global_success_msg.Text = "Contacts successfully imported in your list";
                                 }
@@ -1108,7 +1095,7 @@ public partial class ContactList : System.Web.UI.Page
 
         System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
 
-        msg.From = new MailAddress("lebbeia@unhcr.org", "Inter-Agency Coordination Lebanon");
+        msg.From = new MailAddress("your email address", "your email address title");
 
         msg.To.Add(emailAddress);
         msg.Subject = Title;
