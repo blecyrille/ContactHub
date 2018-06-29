@@ -415,9 +415,6 @@ public partial class Addusers : System.Web.UI.Page
         txtUserMail.Text = string.Empty;
         txtUserPhone.Text = string.Empty;
         txtUserAddress.Text = string.Empty;
-        //ddlProfile.SelectedValue = string.Empty;
-        //ddlSectorInterrest.Text = string.Empty;
-        //ddlAreaInterest.Text = string.Empty;
         ddlUserActif.Text = string.Empty;
         txtUserNote.Text = string.Empty;
 

@@ -265,7 +265,6 @@ public partial class FocalPoint : System.Web.UI.Page
             {
                 objFocalPoints.FocalPointsID = int.Parse(Session[RunningCache.FocalPointsID].ToString());
                 objFocalPoints.UpdateFocalPoints(objFocalPoints, out strmsg);
-                //objFocalPoints.CustomUpdateFocalPoints(" FocalPointsNotification="+ objFocalPoints.FocalPointsNotification+ " where FocalPointsID=" + Session[RunningCache.FocalPointsID].ToString()) ;
                 this.global_success.Visible = true;
                 this.global_success_msg.Text = "The Focal Point is successfully updated into the system.";
                 UpdatePanel.Update();

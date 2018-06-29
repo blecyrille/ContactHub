@@ -468,7 +468,6 @@ public partial class ContactList : System.Web.UI.Page
                         objInterest.LastModifiedDate = DateTime.Now;
                         objInterest.SaveInterest(objInterest, out strmsg);
 
-                        // This part is for email saving once I get the email server IP address :)
                         if (this.global_error.Visible) this.global_error.Visible = false;
                         this.global_success.Visible = true;
                         this.global_success_msg.Text = txtSubscriberEmail.Text.Trim() + " is successfully saved into the system.";
@@ -723,7 +722,7 @@ public partial class ContactList : System.Web.UI.Page
                         break;
                 }
 
-                //Get the Sheets in Excel WorkBoo
+                //Get the Sheets in Excel WorkBook
                 conStr = String.Format(conStr, FilePath, "Yes");
                 OleDbConnection connExcel = new OleDbConnection(conStr);
                 OleDbCommand cmdExcel = new OleDbCommand();
@@ -917,8 +916,6 @@ public partial class ContactList : System.Web.UI.Page
                 this.global_success.Visible = true;
                 this.global_success_msg.Text = Mains.Constant.SUCCESS_DELETE;
 
-                //upDel.Update();
-                //upCrudGrid.Update();
                 Session[RunningCache.SectorInterestID] = ddlSectorInterest.SelectedValue.ToString();
                 Session[RunningCache.AreaInterestID] = ddlAreaInterest.SelectedValue.ToString();
 

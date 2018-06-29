@@ -110,7 +110,6 @@ public partial class Default : System.Web.UI.Page
 
             string SectorInterestName = ((Label)EntGridView.Rows[index].FindControl("SectorInterestName")).Text;
             string AreaInterestName = ((Label)EntGridView.Rows[index].FindControl("AreaInterestName")).Text;
-            //string FocalPointsNotification = ((Label)EntGridView.Rows[index].FindControl("FocalPointsNotification")).Text;
 
 
 
