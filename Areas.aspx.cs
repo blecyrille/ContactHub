@@ -163,8 +163,6 @@ public partial class Areas : System.Web.UI.Page
             {
                 try
                 {
-
-                    //Session[RunningCache.ModuleID] = HDnID;
                     txtAreaInterestName.Text = AreaInterestName;
                     txtAreaInterestDescription.Text = AreaInterestDescription;
                     BtnSave.Text = "Update";
